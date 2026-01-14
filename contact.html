@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact sumomitopplus</title>
+<style>
+:root {
+  --ink: #1f1c18;
+  --muted: #4c4841;
+  --accent: #ff6b3d;
+  --accent-2: #1aa6a0;
+  --accent-3: #ffb347;
+  --surface: #fff8ef;
+  --surface-2: #f3f7f4;
+  --stroke: #e7dfd6;
+  --shadow: 0 18px 40px rgba(23, 28, 32, 0.12);
+  --radius: 20px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 179, 71, 0.3), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(26, 166, 160, 0.25), transparent 40%),
+    linear-gradient(120deg, #fff8ef 0%, #f2f7f5 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  padding: 1rem 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--stroke);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header > div a:first-child {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+header > div a:last-child {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+nav a {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--ink);
+}
+nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+main section {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+main section + section {
+  margin-top: 2rem;
+}
+h1, h2, h3 {
+  font-family: "Gill Sans", "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+}
+h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  margin-bottom: 0.6rem;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+p {
+  color: var(--muted);
+}
+button, input, textarea {
+  font: inherit;
+}
+input, textarea {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: #fff;
+}
+button {
+  border: none;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+footer {
+  background: linear-gradient(135deg, #fff3e0 0%, #e9faf7 100%);
+  border-top: 1px solid var(--stroke);
+  padding: 2.5rem 1.5rem;
+}
+footer > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+footer section {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid var(--stroke);
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+footer form {
+  display: grid;
+  gap: 0.75rem;
+}
+footer label {
+  font-weight: 600;
+}
+footer input {
+  width: 100%;
+}
+footer button {
+  background: var(--accent);
+}
+footer > p {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.ct-skip-2r8k6w {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.ct-skip-2r8k6w:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent-2);
+  color: #fff;
+  border-radius: 999px;
+  z-index: 100;
+}
+.ct-hero-6c1p4n {
+  background: linear-gradient(120deg, #fff5ea 0%, #e9faf7 100%);
+  border: 1px solid #f0e1d4;
+}
+.ct-hero-6c1p4n p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+.ct-form-9m3s7t form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.ct-form-9m3s7t form > div {
+  display: grid;
+  gap: 0.75rem;
+}
+.ct-form-9m3s7t textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.ct-form-9m3s7t button {
+  background: var(--accent);
+  color: #fff;
+}
+.ct-form-9m3s7t p[role="status"] {
+  margin-top: 1rem;
+  background: rgba(26, 166, 160, 0.12);
+  border-radius: 14px;
+  padding: 0.75rem;
+  border: 1px dashed var(--accent-2);
+}
+.ct-qa-4v7d1h > div {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.ct-qa-4v7d1h details {
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 0.75rem;
+  background: var(--surface);
+}
+.ct-qa-4v7d1h summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ct-qa-4v7d1h summary::-webkit-details-marker {
+  display: none;
+}
+.ct-qa-4v7d1h details[open] {
+  box-shadow: var(--shadow);
+}
+.ct-cookie-1b5q8j {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+  z-index: 200;
+}
+.ct-cookie-1b5q8j div {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.ct-cookie-1b5q8j button {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+}
+.ct-cookie-1b5q8j button:last-child {
+  background: transparent;
+  color: var(--ink);
+}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+@media (min-width: 900px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  nav {
+    justify-content: flex-end;
+  }
+  .ct-form-9m3s7t form > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ct-qa-4v7d1h > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  footer > div {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+  .ct-cookie-1b5q8j {
+    max-width: 960px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+main section {
+  animation: rise 0.7s ease both;
+}
+main section:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+main section:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="ct-skip-2r8k6w" href="#main">Skip to content</a>
+<header>
+  <div>
+    <a href="index.html">sumomitopplus</a>
+    <a href="play.html">Play demo</a>
+  </div>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Policy</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="ct-hero-6c1p4n">
+    <p>Contact</p>
+    <h1>Reach the sumomitopplus crew</h1>
+    <p>Have a question or a game idea? Send a note and we will reply as soon as we can.</p>
+  </section>
+  <section class="ct-form-9m3s7t">
+    <h2>Send us a message</h2>
+    <form data-contact-form>
+      <div>
+        <div>
+          <label for="contact-name-ct">Name</label>
+          <input id="contact-name-ct" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="contact-email-ct">Email</label>
+          <input id="contact-email-ct" name="email" type="email" autocomplete="email" required>
+        </div>
+      </div>
+      <label for="contact-message-ct">Message</label>
+      <textarea id="contact-message-ct" name="message" required></textarea>
+      <button type="submit">Send message</button>
+    </form>
+    <p data-contact-success role="status" aria-live="polite" hidden>Thanks for reaching out. We will get back to you soon.</p>
+  </section>
+  <section class="ct-qa-4v7d1h">
+    <h2>Quick answers</h2>
+    <div>
+      <details>
+        <summary>Why is the game not loading?</summary>
+        <p>Some browsers block iframes. Use the "Open in new tab" link on the play page.</p>
+      </details>
+      <details>
+        <summary>Is there any real money involved?</summary>
+        <p>No. sumomitopplus is demo only with no real money and no prizes.</p>
+      </details>
+      <details>
+        <summary>Can I remove my data?</summary>
+        <p>Yes. Send a message and we will delete any contact details you shared.</p>
+      </details>
+      <details>
+        <summary>How can I suggest a game?</summary>
+        <p>Use the contact form and include the theme or style you want to see.</p>
+      </details>
+    </div>
+  </section>
+</main>
+<footer>
+  <div>
+    <section>
+      <h2>sumomitopplus Social Arcade</h2>
+      <p>A social arcade lounge with free demos, bright themes, and zero stakes.</p>
+      <p>18+ only. For entertainment only, no real money, no prizes.</p>
+    </section>
+    <section>
+      <h3>Newsletter</h3>
+      <form data-newsletter-form>
+        <label for="news-name-ct">Name</label>
+        <input id="news-name-ct" name="name" type="text" autocomplete="name" required>
+        <label for="news-email-ct">Email</label>
+        <input id="news-email-ct" name="email" type="email" autocomplete="email" required>
+        <button type="submit">Join the lounge</button>
+      </form>
+      <p data-newsletter-success role="status" aria-live="polite" hidden>Thanks for joining. Your first update lands soon.</p>
+    </section>
+    <section>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="play.html">Play a demo</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Responsible play</h3>
+      <ul>
+        <li><a href="https://www.begambleaware.org">BeGambleAware</a></li>
+        <li><a href="https://www.gamcare.org.uk">GamCare</a></li>
+        <li><a href="https://www.gamblingtherapy.org">Gambling Therapy</a></li>
+      </ul>
+    </section>
+  </div>
+  <p>Copyright 2026 sumomitopplus. Demo entertainment only.</p>
+</footer>
+<aside class="ct-cookie-1b5q8j" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>Cookies help us improve your experience. By continuing to browse this site, you agree to our use of cookies.</p>
+  <div>
+    <button type="button" data-cookie-action="accept">Accept</button>
+    <button type="button" data-cookie-action="decline">Decline</button>
+  </div>
+</aside>
+<script>
+(() => {
+  const banner = document.querySelector('[data-cookie-banner]');
+  const storageKey = 'arcade_cookie_choice';
+  const safeStorage = (() => {
+    try {
+      const testKey = '__arcade_test__';
+      window.localStorage.setItem(testKey, testKey);
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    } catch (error) {
+      return null;
+    }
+  })();
+  const getStoredChoice = () => {
+    if (!safeStorage) {
+      return null;
+    }
+    try {
+      return safeStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+  const setStoredChoice = (value) => {
+    if (!safeStorage) {
+      return;
+    }
+    try {
+      safeStorage.setItem(storageKey, value);
+    } catch (error) {
+      return;
+    }
+  };
+  if (banner) {
+    const stored = getStoredChoice();
+    if (stored) {
+      banner.hidden = true;
+    }
+    const setChoice = (value) => {
+      setStoredChoice(value);
+      banner.hidden = true;
+    };
+    const accept = banner.querySelector('[data-cookie-action="accept"]');
+    const decline = banner.querySelector('[data-cookie-action="decline"]');
+    if (accept) {
+      accept.addEventListener('click', () => setChoice('accepted'));
+    }
+    if (decline) {
+      decline.addEventListener('click', () => setChoice('declined'));
+    }
+  }
+
+  const newsForm = document.querySelector('[data-newsletter-form]');
+  const newsSuccess = document.querySelector('[data-newsletter-success]');
+  if (newsForm && newsSuccess) {
+    newsForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      newsForm.reset();
+      newsForm.hidden = true;
+      newsSuccess.hidden = false;
+    });
+  }
+
+  const contactForm = document.querySelector('[data-contact-form]');
+  const contactSuccess = document.querySelector('[data-contact-success]');
+  if (contactForm && contactSuccess) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      contactForm.reset();
+      contactForm.hidden = true;
+      contactSuccess.hidden = false;
+    });
+  }
+})();
+</script>
+</body>
+</html>

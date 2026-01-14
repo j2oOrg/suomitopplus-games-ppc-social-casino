@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About sumomitopplus Social Arcade</title>
+<style>
+:root {
+  --ink: #1f1c18;
+  --muted: #4c4841;
+  --accent: #ff6b3d;
+  --accent-2: #1aa6a0;
+  --accent-3: #ffb347;
+  --surface: #fff8ef;
+  --surface-2: #f3f7f4;
+  --stroke: #e7dfd6;
+  --shadow: 0 18px 40px rgba(23, 28, 32, 0.12);
+  --radius: 20px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 179, 71, 0.3), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(26, 166, 160, 0.25), transparent 40%),
+    linear-gradient(120deg, #fff8ef 0%, #f2f7f5 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  padding: 1rem 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--stroke);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header > div a:first-child {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+header > div a:last-child {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+nav a {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--ink);
+}
+nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+main section {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+main section + section {
+  margin-top: 2rem;
+}
+h1, h2, h3 {
+  font-family: "Gill Sans", "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+}
+h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  margin-bottom: 0.6rem;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+p {
+  color: var(--muted);
+}
+button, input, textarea {
+  font: inherit;
+}
+input, textarea {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  background: #fff;
+}
+button {
+  border: none;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+footer {
+  background: linear-gradient(135deg, #fff3e0 0%, #e9faf7 100%);
+  border-top: 1px solid var(--stroke);
+  padding: 2.5rem 1.5rem;
+}
+footer > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+footer section {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid var(--stroke);
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+footer form {
+  display: grid;
+  gap: 0.75rem;
+}
+footer label {
+  font-weight: 600;
+}
+footer input {
+  width: 100%;
+}
+footer button {
+  background: var(--accent);
+}
+footer > p {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.ab-skip-9t5k2v {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.ab-skip-9t5k2v:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent-2);
+  color: #fff;
+  border-radius: 999px;
+  z-index: 100;
+}
+.ab-hero-1z8f3n {
+  display: grid;
+  gap: 1.5rem;
+  background: linear-gradient(120deg, #fff5ea 0%, #e9faf7 100%);
+  border: 1px solid #f0e1d4;
+}
+.ab-hero-1z8f3n::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(26, 166, 160, 0.25), transparent 70%);
+  bottom: -120px;
+  right: -60px;
+}
+.ab-hero-1z8f3n > div:first-child p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+.ab-hero-1z8f3n > div:last-child {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.ab-hero-1z8f3n ul {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.ab-hero-1z8f3n li {
+  background: var(--surface);
+  padding: 0.75rem;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+}
+.ab-story-6p2m7c {
+  display: grid;
+  gap: 0.75rem;
+}
+.ab-do-4r9x1a ul {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.ab-do-4r9x1a li {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.ab-do-4r9x1a li:nth-child(odd) {
+  border-left: 4px solid var(--accent-2);
+}
+.ab-do-4r9x1a li:nth-child(even) {
+  border-left: 4px solid var(--accent);
+}
+.ab-fair-7b3k5d {
+  background: linear-gradient(120deg, #fef5eb 0%, #eef9f6 100%);
+}
+.ab-fair-7b3k5d ul {
+  margin-top: 0.8rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+.ab-fair-7b3k5d li {
+  margin-bottom: 0.4rem;
+}
+.ab-faq-2w8n6q > div {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.ab-faq-2w8n6q details {
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 0.75rem;
+  background: var(--surface);
+}
+.ab-faq-2w8n6q summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ab-faq-2w8n6q summary::-webkit-details-marker {
+  display: none;
+}
+.ab-faq-2w8n6q details[open] {
+  box-shadow: var(--shadow);
+}
+.ab-cookie-5g1s9e {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+  z-index: 200;
+}
+.ab-cookie-5g1s9e div {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.ab-cookie-5g1s9e button {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+}
+.ab-cookie-5g1s9e button:last-child {
+  background: transparent;
+  color: var(--ink);
+}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+@media (min-width: 900px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  nav {
+    justify-content: flex-end;
+  }
+  .ab-hero-1z8f3n {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+  }
+  .ab-do-4r9x1a ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ab-faq-2w8n6q > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  footer > div {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+  .ab-cookie-5g1s9e {
+    max-width: 960px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+main section {
+  animation: rise 0.7s ease both;
+}
+main section:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+main section:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+main section:nth-of-type(4) {
+  animation-delay: 0.24s;
+}
+main section:nth-of-type(5) {
+  animation-delay: 0.32s;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="ab-skip-9t5k2v" href="#main">Skip to content</a>
+<header>
+  <div>
+    <a href="index.html">sumomitopplus</a>
+    <a href="play.html">Play demo</a>
+  </div>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html" aria-current="page">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Policy</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="ab-hero-1z8f3n">
+    <div>
+      <p>Our story</p>
+      <h1>About sumomitopplus</h1>
+      <p>sumomitopplus Social Arcade began as a simple idea: keep the social fun of a casino floor without the stakes. We built a lounge where demo games are the whole point.</p>
+      <p>18+ only. For entertainment only, no real money, no prizes.</p>
+    </div>
+    <div>
+      <h2>At a glance</h2>
+      <ul>
+        <li><strong>Demo first:</strong> every spin is a free play experience.</li>
+        <li><strong>Social feel:</strong> share reactions, compare sessions, and trade highlights.</li>
+        <li><strong>Clear pace:</strong> short sessions with simple rules and quick resets.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="ab-story-6p2m7c">
+    <h2>Brand story</h2>
+    <p>We wanted a place that feels lively without asking for anything in return. sumomitopplus is a bright arcade lounge where the mood is playful and the outcomes are just for fun.</p>
+    <p>Our design is built around quick entry, clean layouts, and a sense of movement. We keep the focus on the games and the people who enjoy them together.</p>
+  </section>
+  <section class="ab-do-4r9x1a">
+    <h2>What you can do here</h2>
+    <ul>
+      <li>
+        <h3>Try the featured demo</h3>
+        <p>Enjoy the frosty Ice Joker demo with bright symbols and quick flips.</p>
+      </li>
+      <li>
+        <h3>Build a quick routine</h3>
+        <p>Play a few rounds, pause, and return anytime with no pressure.</p>
+      </li>
+      <li>
+        <h3>Share the moment</h3>
+        <p>Send the demo link to friends and compare quick highlight moments.</p>
+      </li>
+      <li>
+        <h3>Stay in control</h3>
+        <p>Clear demo rules and visible settings keep the pace friendly.</p>
+      </li>
+    </ul>
+  </section>
+  <section class="ab-fair-7b3k5d">
+    <h2>Fairness and transparency</h2>
+    <p>sumomitopplus only offers demo games. There is no real money play, no cash-out, and no prizes. We keep the experience honest and easy to understand.</p>
+    <ul>
+      <li>Game outcomes are produced by the demo engine inside each game.</li>
+      <li>We do not modify results, odds, or speeds beyond the demo settings.</li>
+      <li>You can leave at any time with no accounts or deposits required.</li>
+    </ul>
+  </section>
+  <section class="ab-faq-2w8n6q">
+    <h2>FAQ</h2>
+    <div>
+      <details>
+        <summary>Is this real money gambling?</summary>
+        <p>No. Every sumomitopplus title is a free demo with no payouts and no prizes.</p>
+      </details>
+      <details>
+        <summary>Do I need an account?</summary>
+        <p>No account is needed. You can play instantly and leave anytime.</p>
+      </details>
+      <details>
+        <summary>How do you choose the game?</summary>
+        <p>We currently spotlight Ice Joker to keep the experience focused and easy to jump into.</p>
+      </details>
+      <details>
+        <summary>Can I suggest a new theme?</summary>
+        <p>Yes. Send us a note on the contact page and we will review it.</p>
+      </details>
+    </div>
+  </section>
+</main>
+<footer>
+  <div>
+    <section>
+      <h2>sumomitopplus Social Arcade</h2>
+      <p>A social arcade lounge with free demos, bright themes, and zero stakes.</p>
+      <p>18+ only. For entertainment only, no real money, no prizes.</p>
+    </section>
+    <section>
+      <h3>Newsletter</h3>
+      <form data-newsletter-form>
+        <label for="news-name-ab">Name</label>
+        <input id="news-name-ab" name="name" type="text" autocomplete="name" required>
+        <label for="news-email-ab">Email</label>
+        <input id="news-email-ab" name="email" type="email" autocomplete="email" required>
+        <button type="submit">Join the lounge</button>
+      </form>
+      <p data-newsletter-success role="status" aria-live="polite" hidden>Thanks for joining. Your first update lands soon.</p>
+    </section>
+    <section>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="play.html">Play a demo</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Responsible play</h3>
+      <ul>
+        <li><a href="https://www.begambleaware.org">BeGambleAware</a></li>
+        <li><a href="https://www.gamcare.org.uk">GamCare</a></li>
+        <li><a href="https://www.gamblingtherapy.org">Gambling Therapy</a></li>
+      </ul>
+    </section>
+  </div>
+  <p>Copyright 2026 sumomitopplus. Demo entertainment only.</p>
+</footer>
+<aside class="ab-cookie-5g1s9e" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>Cookies help us improve your experience. By continuing to browse this site, you agree to our use of cookies.</p>
+  <div>
+    <button type="button" data-cookie-action="accept">Accept</button>
+    <button type="button" data-cookie-action="decline">Decline</button>
+  </div>
+</aside>
+<script>
+(() => {
+  const banner = document.querySelector('[data-cookie-banner]');
+  const storageKey = 'arcade_cookie_choice';
+  const safeStorage = (() => {
+    try {
+      const testKey = '__arcade_test__';
+      window.localStorage.setItem(testKey, testKey);
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    } catch (error) {
+      return null;
+    }
+  })();
+  const getStoredChoice = () => {
+    if (!safeStorage) {
+      return null;
+    }
+    try {
+      return safeStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+  const setStoredChoice = (value) => {
+    if (!safeStorage) {
+      return;
+    }
+    try {
+      safeStorage.setItem(storageKey, value);
+    } catch (error) {
+      return;
+    }
+  };
+  if (banner) {
+    const stored = getStoredChoice();
+    if (stored) {
+      banner.hidden = true;
+    }
+    const setChoice = (value) => {
+      setStoredChoice(value);
+      banner.hidden = true;
+    };
+    const accept = banner.querySelector('[data-cookie-action="accept"]');
+    const decline = banner.querySelector('[data-cookie-action="decline"]');
+    if (accept) {
+      accept.addEventListener('click', () => setChoice('accepted'));
+    }
+    if (decline) {
+      decline.addEventListener('click', () => setChoice('declined'));
+    }
+  }
+
+  const newsForm = document.querySelector('[data-newsletter-form]');
+  const newsSuccess = document.querySelector('[data-newsletter-success]');
+  if (newsForm && newsSuccess) {
+    newsForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      newsForm.reset();
+      newsForm.hidden = true;
+      newsSuccess.hidden = false;
+    });
+  }
+})();
+</script>
+</body>
+</html>
