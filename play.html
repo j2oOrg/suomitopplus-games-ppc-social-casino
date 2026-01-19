@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Play the featured game at sumomitopplus Social Casino. For fun only. 18+ only. No real-money gambling, no prizes, and no cash value.">
+<meta name="description" content="Play the Suomitopplus game trio: dice, matching, and a slot-style reel. 21+ only, not for minors. Just for fun - no real-money gambling, no prizes of real-world value, no cash value, no in-app purchases.">
 <meta name="robots" content="index,follow">
-<title>sumomitopplus Play Room</title>
+<title>Suomitopplus Play Room</title>
 <style>
 :root {
   --ink: #1f1c18;
@@ -220,44 +220,57 @@ footer > p {
   gap: 1rem;
   background: var(--surface);
 }
-.pl-stage-6k8p4c > div:first-child {
+.pl-stage-header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
-.pl-stage-6k8p4c > div:first-child > div:last-child {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-}
-.pl-stage-6k8p4c > div:first-child button {
-  background: var(--accent);
-  color: #fff;
-}
-.pl-stage-6k8p4c > div:first-child a {
+.pl-stage-actions a {
   padding: 0.5rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--ink);
   font-weight: 700;
 }
-.pl-stage-6k8p4c > div:nth-child(2) {
+.pl-card-grid {
   display: grid;
-  gap: 0.5rem;
+  gap: 1rem;
+}
+.pl-card-grid article {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.pl-card-grid article span {
+  justify-self: start;
+  background: var(--accent-2);
+  color: #fff;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.pl-card-grid article a {
+  justify-self: start;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+.pl-note {
+  display: grid;
+  gap: 0.4rem;
   background: rgba(26, 166, 160, 0.1);
   border-radius: 14px;
   padding: 0.75rem;
   border: 1px dashed var(--accent-2);
-}
-.pl-stage-6k8p4c iframe {
-  width: 100%;
-  min-height: 60vh;
-  border: 0;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: var(--shadow);
 }
 .pl-cookie-2j7q9r {
   position: fixed;
@@ -308,6 +321,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   footer > div {
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
   }
+  .pl-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .pl-cookie-2j7q9r {
     max-width: 960px;
     margin: 0 auto;
@@ -343,7 +359,7 @@ main section:nth-of-type(2) {
 <a class="pl-skip-5v2m7x" href="#main">Skip to content</a>
 <header>
   <div>
-    <a href="index.html">sumomitopplus</a>
+    <a href="index.html">Suomitopplus</a>
     <a href="play.html">Play now</a>
   </div>
   <nav aria-label="Primary">
@@ -355,47 +371,63 @@ main section:nth-of-type(2) {
     <a href="policy.html">Policy</a>
   </nav>
 </header>
+<!-- Play hub: links to three just-for-fun games (no real-money play). -->
 <main id="main">
   <section class="pl-hero-9n3t1b">
     <p>Play space</p>
-    <h1>Play the featured game</h1>
-    <p>Enjoy the featured game and settle into a short session. For fun only, with no real money, no prizes, and no cash value.</p>
+    <h1>Pick a game</h1>
+    <p>Choose a dice roll, a matching game, or a slot-style reel. Each one is built for low-pressure sessions.</p>
   </section>
   <section class="pl-stage-6k8p4c">
-    <div>
+    <div class="pl-stage-header">
       <div>
-        <p>Now playing</p>
-        <h2><span data-current-game aria-live="polite">Loading game</span></h2>
-        <p>For fun only. No real money, no prizes, and no cash value.</p>
+        <p>Game lineup</p>
+        <h2>Three ways to play</h2>
+        <p>Jump into any game without an account and reset whenever you want.</p>
       </div>
-      <div>
-        <a href="#" data-open-link target="_blank" rel="noopener">Open in new tab</a>
+      <div class="pl-stage-actions">
+        <a href="games.html">Browse game details</a>
       </div>
     </div>
-    <div>
-      <p><strong>For fun only.</strong> Games are for entertainment, with no real money, no prizes, and no cash value.</p>
-      <p><strong>18+ only.</strong> Please play responsibly and take breaks.</p>
+    <div class="pl-card-grid">
+      <!-- Dice Drift: local dice game, entertainment only. -->
+      <article>
+        <span>Dice</span>
+        <h3>Dice Drift</h3>
+        <p>Roll two dice for casual rounds and easy resets.</p>
+        <a href="dice.html">Play Dice Drift</a>
+      </article>
+      <!-- Match Mosaic: local matching game, entertainment only. -->
+      <article>
+        <span>Match</span>
+        <h3>Match Mosaic</h3>
+        <p>Flip tiles, find pairs, and settle into a calm memory challenge.</p>
+        <a href="match.html">Play Match Mosaic</a>
+      </article>
+      <!-- Reel Spark: local reel game, entertainment only. -->
+      <article>
+        <span>Reels</span>
+        <h3>Reel Spark</h3>
+        <p>Spin a three-reel, slot-style layout designed just for fun.</p>
+        <a href="slots.html">Play Reel Spark</a>
+      </article>
     </div>
-    <iframe data-game-frame title="Game" src="about:blank" loading="lazy"></iframe>
+    <div class="pl-note">
+      <p><strong>Just for fun.</strong> No real money, no prizes, no cash value.</p>
+      <p><strong>21+ only.</strong> Please play responsibly and take breaks.</p>
+    </div>
   </section>
 </main>
 <footer>
   <div>
     <section>
-      <h2>sumomitopplus Social Casino</h2>
-      <p>A social casino lounge with bright themes, social play, and no real-money play.</p>
-      <p>18+ only. For entertainment only. No real-money gambling, no prizes, and no cash value.</p>
+      <h2>Suomitopplus Social Casino</h2>
+      <p>A low-key social casino vibe with three small games and no real-money play.</p>
+      <p>21+ only. Just for fun - no real-money gambling, no prizes, no cash value.</p>
     </section>
     <section>
-      <h3>Newsletter</h3>
-      <form data-newsletter-form>
-        <label for="news-name-pl">Name</label>
-        <input id="news-name-pl" name="name" type="text" autocomplete="name" required>
-        <label for="news-email-pl">Email</label>
-        <input id="news-email-pl" name="email" type="email" autocomplete="email" required>
-        <button type="submit">Join the lounge</button>
-      </form>
-      <p data-newsletter-success role="status" aria-live="polite" hidden>Thanks for joining. Your first update will arrive soon.</p>
+      <h3>Email updates</h3>
+      <p>Want updates? Email <a href="mailto:support@suomitopplus.com">support@suomitopplus.com</a>.</p>
     </section>
     <section>
       <h3>Explore</h3>
@@ -407,20 +439,23 @@ main section:nth-of-type(2) {
       </ul>
     </section>
   </div>
-  <p>Copyright 2026 sumomitopplus. Entertainment only.</p>
+  <p>Copyright 2026 Suomitopplus. For fun only.</p>
 </footer>
 <div class="pl-cookie-2j7q9r" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>Cookies help us improve your experience. By continuing to browse this site, you agree to our use of cookies.</p>
+  <p>We only use local storage to remember your choice. We do not currently use analytics or ad cookies.</p>
   <div>
     <button type="button" data-cookie-action="accept">Accept</button>
     <button type="button" data-cookie-action="decline">Decline</button>
   </div>
 </div>
-<!-- JS: handles cookie consent banner, newsletter signup, and game embed. -->
+<!-- JS: handles cookie consent banner. -->
 <script>
 (() => {
+  // Cookie consent banner wiring (localStorage only; no analytics/ads).
   const banner = document.querySelector('[data-cookie-banner]');
+  // Key for storing consent choice.
   const storageKey = 'arcade_cookie_choice';
+  // Check if localStorage is available.
   const safeStorage = (() => {
     try {
       const testKey = '__arcade_test__';
@@ -431,6 +466,7 @@ main section:nth-of-type(2) {
       return null;
     }
   })();
+  // Read stored consent choice.
   const getStoredChoice = () => {
     if (!safeStorage) {
       return null;
@@ -441,6 +477,7 @@ main section:nth-of-type(2) {
       return null;
     }
   };
+  // Save consent choice.
   const setStoredChoice = (value) => {
     if (!safeStorage) {
       return;
@@ -451,6 +488,7 @@ main section:nth-of-type(2) {
       return;
     }
   };
+  // Hide banner if a choice is stored and wire button handlers.
   if (banner) {
     const stored = getStoredChoice();
     if (stored) {
@@ -460,6 +498,7 @@ main section:nth-of-type(2) {
       setStoredChoice(value);
       banner.hidden = true;
     };
+    // Buttons set the stored choice and hide the banner.
     const accept = banner.querySelector('[data-cookie-action="accept"]');
     const decline = banner.querySelector('[data-cookie-action="decline"]');
     if (accept) {
@@ -469,36 +508,23 @@ main section:nth-of-type(2) {
       decline.addEventListener('click', () => setChoice('declined'));
     }
   }
-
-  const newsForm = document.querySelector('[data-newsletter-form]');
-  const newsSuccess = document.querySelector('[data-newsletter-success]');
-  if (newsForm && newsSuccess) {
-    newsForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      newsForm.reset();
-      newsForm.hidden = true;
-      newsSuccess.hidden = false;
-    });
-  }
-
-  const game = {
-    name: 'Ice Joker',
-    url: 'https://asccw.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=icejoker&lang=en_GB&practice=1&channel=desktop&demo=2'
-  };
-  const frame = document.querySelector('[data-game-frame]');
-  const nameLabel = document.querySelector('[data-current-game]');
-  const openLink = document.querySelector('[data-open-link]');
-  if (frame) {
-    frame.src = game.url;
-  }
-  if (nameLabel) {
-    nameLabel.textContent = game.name;
-  }
-  if (openLink) {
-    openLink.href = game.url;
-  }
 })();
 </script>
 <!-- End JS -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

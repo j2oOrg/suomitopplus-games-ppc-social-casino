@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Play Dice Drift at Suomitopplus. 21+ only, not for minors. Just for fun - no real-money gambling, no prizes of real-world value, no cash value, no in-app purchases.">
+<meta name="robots" content="index,follow">
+<title>Suomitopplus Dice Drift</title>
+<style>
+:root {
+  --ink: #1f1c18;
+  --muted: #4c4841;
+  --accent: #ff6b3d;
+  --accent-2: #1aa6a0;
+  --accent-3: #ffb347;
+  --surface: #fff8ef;
+  --surface-2: #f3f7f4;
+  --stroke: #e7dfd6;
+  --shadow: 0 18px 40px rgba(23, 28, 32, 0.12);
+  --radius: 20px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+[hidden] { display: none !important; }
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 179, 71, 0.3), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(26, 166, 160, 0.25), transparent 40%),
+    linear-gradient(120deg, #fff8ef 0%, #f2f7f5 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  padding: 1rem 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--stroke);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header > div a:first-child {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+header > div a:last-child {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+nav a {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--ink);
+}
+nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+main section {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+main section + section {
+  margin-top: 2rem;
+}
+h1, h2, h3 {
+  font-family: "Gill Sans", "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+}
+h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  margin-bottom: 0.6rem;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+p {
+  color: var(--muted);
+}
+button {
+  border: none;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+footer {
+  background: linear-gradient(135deg, #fff3e0 0%, #e9faf7 100%);
+  border-top: 1px solid var(--stroke);
+  padding: 2.5rem 1.5rem;
+}
+footer > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+footer section {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid var(--stroke);
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+footer > p {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.dz-skip {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.dz-skip:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent-2);
+  color: #fff;
+  border-radius: 999px;
+  z-index: 100;
+}
+.dz-hero {
+  background: linear-gradient(120deg, #fff5ea 0%, #e9faf7 100%);
+  border: 1px solid #f0e1d4;
+}
+.dz-hero p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+.dz-hero img {
+  margin-top: 1rem;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.dz-panel {
+  display: grid;
+  gap: 1.2rem;
+}
+.dz-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.dz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.dz-actions button:first-child {
+  background: var(--accent);
+}
+.dz-dice {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.dz-die {
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+.dz-stats {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+.dz-stats div {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 0.75rem;
+  border: 1px solid var(--stroke);
+}
+.dz-history ul {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+.dz-note {
+  background: rgba(26, 166, 160, 0.1);
+  border-radius: 14px;
+  padding: 0.75rem;
+  border: 1px dashed var(--accent-2);
+  display: grid;
+  gap: 0.4rem;
+}
+.dz-cookie {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+  z-index: 200;
+}
+.dz-cookie div {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.dz-cookie button {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+}
+.dz-cookie button:last-child {
+  background: transparent;
+  color: var(--ink);
+}
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+@media (min-width: 900px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  nav {
+    justify-content: flex-end;
+  }
+  footer > div {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+  .dz-cookie {
+    max-width: 960px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+main section {
+  animation: rise 0.7s ease both;
+}
+main section:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="dz-skip" href="#main">Skip to content</a>
+<header>
+  <div>
+    <a href="index.html">Suomitopplus</a>
+    <a href="play.html">Play now</a>
+  </div>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Policy</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="dz-hero">
+    <p>Dice game</p>
+    <h1>Dice Drift</h1>
+    <p>Roll two dice, watch the total, and reset whenever you want.</p>
+    <img src="dice.webp" alt="Two dice resting on a wooden surface" loading="lazy">
+  </section>
+  <section class="dz-panel">
+    <div class="dz-top">
+      <div>
+        <h2>Roll the dice</h2>
+        <p>Hit Roll for a fresh pair of dice. Just for fun - no real-money gambling or prizes of real-world value.</p>
+      </div>
+      <div class="dz-actions">
+        <button type="button" data-roll>Roll</button>
+        <button type="button" data-reset>Reset</button>
+      </div>
+    </div>
+    <div class="dz-dice" aria-live="polite">
+      <div class="dz-die" data-die="1">1</div>
+      <div class="dz-die" data-die="2">1</div>
+    </div>
+    <div class="dz-stats">
+      <div>
+        <h3>Total</h3>
+        <p><span data-total>2</span></p>
+      </div>
+      <div>
+        <h3>Rolls</h3>
+        <p><span data-count>0</span></p>
+      </div>
+      <div>
+        <h3>Best total</h3>
+        <p><span data-best>--</span></p>
+      </div>
+    </div>
+    <div class="dz-history">
+      <h3>Recent rolls</h3>
+      <ul data-history>
+        <li>Roll to start the streak.</li>
+      </ul>
+    </div>
+    <div class="dz-note">
+      <p><strong>Just for fun.</strong> No real-money gambling, no prizes of real-world value, no cash value.</p>
+      <p><strong>21+ only.</strong> Not for minors.</p>
+      <p><strong>No in-app purchases.</strong></p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div>
+    <section>
+      <h2>Suomitopplus Social Casino</h2>
+      <p>A low-key social casino vibe with three small games and no real-money play.</p>
+      <p>21+ only. Just for fun - no real-money gambling, no prizes, no cash value.</p>
+    </section>
+    <section>
+      <h3>Email updates</h3>
+      <p>Want updates? Email <a href="mailto:support@suomitopplus.com">support@suomitopplus.com</a>.</p>
+    </section>
+    <section>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="play.html">Play now</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </section>
+  </div>
+  <p>Copyright 2026 Suomitopplus. For fun only.</p>
+</footer>
+<div class="dz-cookie" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>We only use local storage to remember your choice. We do not currently use analytics or ad cookies.</p>
+  <div>
+    <button type="button" data-cookie-action="accept">Accept</button>
+    <button type="button" data-cookie-action="decline">Decline</button>
+  </div>
+</div>
+<!-- JS: cookie consent + local, just-for-fun dice game. No real money, no prizes, no purchases. -->
+<script>
+(() => {
+  // Cookie consent banner wiring (localStorage only; no analytics/ads).
+  const banner = document.querySelector('[data-cookie-banner]');
+  // Key for storing consent choice.
+  const storageKey = 'arcade_cookie_choice';
+  // Check if localStorage is available.
+  const safeStorage = (() => {
+    try {
+      const testKey = '__arcade_test__';
+      window.localStorage.setItem(testKey, testKey);
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    } catch (error) {
+      return null;
+    }
+  })();
+  // Read stored consent choice.
+  const getStoredChoice = () => {
+    if (!safeStorage) {
+      return null;
+    }
+    try {
+      return safeStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+  // Save consent choice.
+  const setStoredChoice = (value) => {
+    if (!safeStorage) {
+      return;
+    }
+    try {
+      safeStorage.setItem(storageKey, value);
+    } catch (error) {
+      return;
+    }
+  };
+  // Hide banner if a choice is stored and wire button handlers.
+  if (banner) {
+    const stored = getStoredChoice();
+    if (stored) {
+      banner.hidden = true;
+    }
+    const setChoice = (value) => {
+      setStoredChoice(value);
+      banner.hidden = true;
+    };
+    // Buttons set the stored choice and hide the banner.
+    const accept = banner.querySelector('[data-cookie-action="accept"]');
+    const decline = banner.querySelector('[data-cookie-action="decline"]');
+    if (accept) {
+      accept.addEventListener('click', () => setChoice('accepted'));
+    }
+    if (decline) {
+      decline.addEventListener('click', () => setChoice('declined'));
+    }
+  }
+
+  // Dice game: random rolls for entertainment only.
+  const rollButton = document.querySelector('[data-roll]');
+  const resetButton = document.querySelector('[data-reset]');
+  const dice = Array.from(document.querySelectorAll('[data-die]'));
+  const totalEl = document.querySelector('[data-total]');
+  const countEl = document.querySelector('[data-count]');
+  const bestEl = document.querySelector('[data-best]');
+  const historyEl = document.querySelector('[data-history]');
+  // Local game state only.
+  let rollCount = 0;
+  let bestTotal = 0;
+  let history = [];
+
+  // Render the recent roll list in the UI.
+  const updateHistory = () => {
+    if (!historyEl) {
+      return;
+    }
+    historyEl.innerHTML = '';
+    if (history.length === 0) {
+      const item = document.createElement('li');
+      item.textContent = 'Roll to start the streak.';
+      historyEl.appendChild(item);
+      return;
+    }
+    history.forEach((total, index) => {
+      const item = document.createElement('li');
+      item.textContent = `Roll ${index + 1}: total ${total}`;
+      historyEl.appendChild(item);
+    });
+  };
+
+  // Random roll using Math.random; results are not tied to money or prizes.
+  const rollDice = () => {
+    const values = dice.map(() => Math.floor(Math.random() * 6) + 1);
+    dice.forEach((die, index) => {
+      die.textContent = values[index];
+    });
+    const total = values.reduce((sum, value) => sum + value, 0);
+    rollCount += 1;
+    bestTotal = Math.max(bestTotal, total);
+    history = [total, ...history].slice(0, 5);
+    if (totalEl) {
+      totalEl.textContent = total;
+    }
+    if (countEl) {
+      countEl.textContent = rollCount;
+    }
+    if (bestEl) {
+      bestEl.textContent = bestTotal || '--';
+    }
+    updateHistory();
+  };
+
+  // Reset local counters and UI only.
+  const resetGame = () => {
+    rollCount = 0;
+    bestTotal = 0;
+    history = [];
+    dice.forEach((die) => {
+      die.textContent = '1';
+    });
+    if (totalEl) {
+      totalEl.textContent = '2';
+    }
+    if (countEl) {
+      countEl.textContent = '0';
+    }
+    if (bestEl) {
+      bestEl.textContent = '--';
+    }
+    updateHistory();
+  };
+
+  // Wire up UI controls.
+  if (rollButton) {
+    rollButton.addEventListener('click', rollDice);
+  }
+  if (resetButton) {
+    resetButton.addEventListener('click', resetGame);
+  }
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Play Match Mosaic at Suomitopplus. 21+ only, not for minors. Just for fun - no real-money gambling, no prizes of real-world value, no cash value, no in-app purchases.">
+<meta name="robots" content="index,follow">
+<title>Suomitopplus Match Mosaic</title>
+<style>
+:root {
+  --ink: #1f1c18;
+  --muted: #4c4841;
+  --accent: #ff6b3d;
+  --accent-2: #1aa6a0;
+  --accent-3: #ffb347;
+  --surface: #fff8ef;
+  --surface-2: #f3f7f4;
+  --stroke: #e7dfd6;
+  --shadow: 0 18px 40px rgba(23, 28, 32, 0.12);
+  --radius: 20px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+[hidden] { display: none !important; }
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 179, 71, 0.3), transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(26, 166, 160, 0.25), transparent 40%),
+    linear-gradient(120deg, #fff8ef 0%, #f2f7f5 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  padding: 1rem 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--stroke);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header > div a:first-child {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+header > div a:last-child {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(255, 107, 61, 0.25);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+nav a {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  color: var(--ink);
+}
+nav a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--surface);
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+main section {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+main section + section {
+  margin-top: 2rem;
+}
+h1, h2, h3 {
+  font-family: "Gill Sans", "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+}
+h1 {
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  margin-bottom: 0.6rem;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+p {
+  color: var(--muted);
+}
+button {
+  border: none;
+  background: var(--ink);
+  color: var(--surface);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+footer {
+  background: linear-gradient(135deg, #fff3e0 0%, #e9faf7 100%);
+  border-top: 1px solid var(--stroke);
+  padding: 2.5rem 1.5rem;
+}
+footer > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+footer section {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid var(--stroke);
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+footer > p {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.mt-skip {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.mt-skip:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent-2);
+  color: #fff;
+  border-radius: 999px;
+  z-index: 100;
+}
+.mt-hero {
+  background: linear-gradient(120deg, #fff5ea 0%, #e9faf7 100%);
+  border: 1px solid #f0e1d4;
+}
+.mt-hero p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+.mt-hero img {
+  margin-top: 1rem;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+}
+.mt-panel {
+  display: grid;
+  gap: 1.2rem;
+}
+.mt-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.mt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.mt-actions button {
+  background: var(--accent);
+}
+.mt-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+.mt-stats div {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 0.75rem;
+  border: 1px solid var(--stroke);
+}
+.mt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.mt-card {
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.mt-card.is-flipped,
+.mt-card.is-matched {
+  background: var(--surface-2);
+  border-color: var(--accent-2);
+  transform: translateY(-2px);
+}
+.mt-card.is-matched {
+  color: var(--accent);
+}
+.mt-note {
+  background: rgba(26, 166, 160, 0.1);
+  border-radius: 14px;
+  padding: 0.75rem;
+  border: 1px dashed var(--accent-2);
+  display: grid;
+  gap: 0.4rem;
+}
+.mt-cookie {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+  z-index: 200;
+}
+.mt-cookie div {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.mt-cookie button {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+}
+.mt-cookie button:last-child {
+  background: transparent;
+  color: var(--ink);
+}
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 2px;
+}
+@media (min-width: 900px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+  }
+  nav {
+    justify-content: flex-end;
+  }
+  footer > div {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+  .mt-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .mt-cookie {
+    max-width: 960px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+main section {
+  animation: rise 0.7s ease both;
+}
+main section:nth-of-type(2) {
+  animation-delay: 0.08s;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<a class="mt-skip" href="#main">Skip to content</a>
+<header>
+  <div>
+    <a href="index.html">Suomitopplus</a>
+    <a href="play.html">Play now</a>
+  </div>
+  <nav aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="games.html">Games</a>
+    <a href="contact.html">Contact</a>
+    <a href="terms.html">Terms</a>
+    <a href="policy.html">Policy</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="mt-hero">
+    <p>Matching game</p>
+    <h1>Match Mosaic</h1>
+    <p>Flip tiles, find pairs, and settle into a calm memory challenge.</p>
+    <img src="match.webp" alt="Patterned cards laid out on a table" loading="lazy">
+  </section>
+  <section class="mt-panel">
+    <div class="mt-top">
+      <div>
+        <h2>Find the pairs</h2>
+        <p>Flip two tiles at a time to reveal matching symbols. The board resets anytime.</p>
+      </div>
+      <div class="mt-actions">
+        <button type="button" data-reset>Shuffle</button>
+      </div>
+    </div>
+    <div class="mt-stats">
+      <div>
+        <h3>Moves</h3>
+        <p><span data-moves>0</span></p>
+      </div>
+      <div>
+        <h3>Matches</h3>
+        <p><span data-matches>0</span> / 6</p>
+      </div>
+      <div>
+        <h3>Status</h3>
+        <p><span data-status>Ready</span></p>
+      </div>
+    </div>
+    <div class="mt-grid" data-grid aria-live="polite"></div>
+    <div class="mt-note">
+      <p><strong>Just for fun.</strong> No real-money gambling, no prizes of real-world value, no cash value.</p>
+      <p><strong>21+ only.</strong> Not for minors.</p>
+      <p><strong>No in-app purchases.</strong></p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div>
+    <section>
+      <h2>Suomitopplus Social Casino</h2>
+      <p>A low-key social casino vibe with three small games and no real-money play.</p>
+      <p>21+ only. Just for fun - no real-money gambling, no prizes, no cash value.</p>
+    </section>
+    <section>
+      <h3>Email updates</h3>
+      <p>Want updates? Email <a href="mailto:support@suomitopplus.com">support@suomitopplus.com</a>.</p>
+    </section>
+    <section>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="play.html">Play now</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </section>
+  </div>
+  <p>Copyright 2026 Suomitopplus. For fun only.</p>
+</footer>
+<div class="mt-cookie" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p>We only use local storage to remember your choice. We do not currently use analytics or ad cookies.</p>
+  <div>
+    <button type="button" data-cookie-action="accept">Accept</button>
+    <button type="button" data-cookie-action="decline">Decline</button>
+  </div>
+</div>
+<!-- JS: cookie consent + local, just-for-fun matching game. No real money, no prizes, no purchases. -->
+<script>
+(() => {
+  // Cookie consent banner wiring (localStorage only; no analytics/ads).
+  const banner = document.querySelector('[data-cookie-banner]');
+  // Key for storing consent choice.
+  const storageKey = 'arcade_cookie_choice';
+  // Check if localStorage is available.
+  const safeStorage = (() => {
+    try {
+      const testKey = '__arcade_test__';
+      window.localStorage.setItem(testKey, testKey);
+      window.localStorage.removeItem(testKey);
+      return window.localStorage;
+    } catch (error) {
+      return null;
+    }
+  })();
+  // Read stored consent choice.
+  const getStoredChoice = () => {
+    if (!safeStorage) {
+      return null;
+    }
+    try {
+      return safeStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+  // Save consent choice.
+  const setStoredChoice = (value) => {
+    if (!safeStorage) {
+      return;
+    }
+    try {
+      safeStorage.setItem(storageKey, value);
+    } catch (error) {
+      return;
+    }
+  };
+  // Hide banner if a choice is stored and wire button handlers.
+  if (banner) {
+    const stored = getStoredChoice();
+    if (stored) {
+      banner.hidden = true;
+    }
+    const setChoice = (value) => {
+      setStoredChoice(value);
+      banner.hidden = true;
+    };
+    // Buttons set the stored choice and hide the banner.
+    const accept = banner.querySelector('[data-cookie-action="accept"]');
+    const decline = banner.querySelector('[data-cookie-action="decline"]');
+    if (accept) {
+      accept.addEventListener('click', () => setChoice('accepted'));
+    }
+    if (decline) {
+      decline.addEventListener('click', () => setChoice('declined'));
+    }
+  }
+
+  // Matching game runs fully in the browser; outcomes are random and for fun only.
+  const grid = document.querySelector('[data-grid]');
+  const movesEl = document.querySelector('[data-moves]');
+  const matchesEl = document.querySelector('[data-matches]');
+  const statusEl = document.querySelector('[data-status]');
+  const resetButton = document.querySelector('[data-reset]');
+  const symbols = ['A', 'B', 'C', 'D', 'E', 'F'];
+  // Local game state only.
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+  let moves = 0;
+  let matches = 0;
+
+  // Local shuffle using Math.random; no payouts or real-world value.
+  const shuffle = (array) => {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  };
+
+  // Update move and match counters in the UI.
+  const updateStats = () => {
+    if (movesEl) {
+      movesEl.textContent = moves;
+    }
+    if (matchesEl) {
+      matchesEl.textContent = matches;
+    }
+  };
+
+  // Update status message in the UI.
+  const setStatus = (message) => {
+    if (statusEl) {
+      statusEl.textContent = message;
+    }
+  };
+
+  // Clear flipped cards and unlock the board.
+  const resetBoardState = () => {
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+  };
+
+  // Handle a successful match.
+  const handleMatch = () => {
+    firstCard.classList.add('is-matched');
+    secondCard.classList.add('is-matched');
+    matches += 1;
+    updateStats();
+    if (matches === symbols.length) {
+      setStatus('All pairs matched. Nice round.');
+    } else {
+      setStatus('Match found. Keep going.');
+    }
+    resetBoardState();
+  };
+
+  // Handle a mismatch and flip cards back.
+  const handleMismatch = () => {
+    lockBoard = true;
+    setStatus('No match. Try again.');
+    setTimeout(() => {
+      firstCard.classList.remove('is-flipped');
+      secondCard.classList.remove('is-flipped');
+      firstCard.textContent = '?';
+      secondCard.textContent = '?';
+      resetBoardState();
+    }, 700);
+  };
+
+  // Handle card clicks and matching logic.
+  const onCardClick = (event) => {
+    const card = event.currentTarget;
+    if (lockBoard || card.classList.contains('is-flipped') || card.classList.contains('is-matched')) {
+      return;
+    }
+    card.classList.add('is-flipped');
+    card.textContent = card.dataset.value;
+
+    if (!firstCard) {
+      firstCard = card;
+      setStatus('Pick a second tile.');
+      return;
+    }
+
+    secondCard = card;
+    moves += 1;
+    updateStats();
+    if (firstCard.dataset.value === secondCard.dataset.value) {
+      handleMatch();
+    } else {
+      handleMismatch();
+    }
+  };
+
+  // Builds a new local board; no network calls or purchases.
+  const buildBoard = () => {
+    if (!grid) {
+      return;
+    }
+    const deck = shuffle([...symbols, ...symbols]);
+    grid.innerHTML = '';
+    deck.forEach((symbol) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'mt-card';
+      button.dataset.value = symbol;
+      button.textContent = '?';
+      button.addEventListener('click', onCardClick);
+      grid.appendChild(button);
+    });
+    moves = 0;
+    matches = 0;
+    updateStats();
+    setStatus('Ready');
+    resetBoardState();
+  };
+
+  // Wire up UI controls.
+  if (resetButton) {
+    resetButton.addEventListener('click', buildBoard);
+  }
+
+  // Initialize the board on load.
+  buildBoard();
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

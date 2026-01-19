@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Page not found on sumomitopplus Social Casino. 18+ only. No real-money gambling, no prizes, and no cash value.">
+<meta name="description" content="Page not found on Suomitopplus. 21+ only, not for minors. Just for fun - no real-money gambling, no prizes of real-world value, no cash value, no in-app purchases.">
 <meta name="robots" content="noindex,follow">
-<title>404 | sumomitopplus</title>
+<title>404 | Suomitopplus</title>
 <style>
 :root {
   --ink: #201b16;
@@ -168,15 +168,15 @@ button:focus-visible {
   <section class="nf-card-4v8c2n">
     <p class="nf-code-7x1p5q">404</p>
     <h1 class="nf-title-3m9d8a">This page drifted off the reel</h1>
-    <p class="nf-copy-5q2n7z">We could not find the page you requested. It may have been moved or renamed.</p>
+    <p class="nf-copy-5q2n7z">We could not find the page you were looking for. It may have moved or been renamed.</p>
     <div class="nf-note-1h7w4u">
       <p>Check the address or use your browser's back button to return.</p>
     </div>
-    <p class="nf-disclaimer-2c9f5x">18+ only. For entertainment only. No real-money gambling, no prizes, and no cash value.</p>
+    <p class="nf-disclaimer-2c9f5x">21+ only. Just for fun - no real-money gambling, no prizes, no cash value.</p>
   </section>
 </main>
 <div class="nf-cookie-6v2k8p" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>Cookies help us improve your experience. By continuing to browse this site, you agree to our use of cookies.</p>
+  <p>We only use local storage to remember your choice. We do not currently use analytics or ad cookies.</p>
   <div>
     <button type="button" data-cookie-action="accept">Accept</button>
     <button type="button" data-cookie-action="decline">Decline</button>
@@ -185,8 +185,11 @@ button:focus-visible {
 <!-- JS: handles cookie consent banner state. -->
 <script>
 (() => {
+  // Cookie consent banner wiring (localStorage only; no analytics/ads).
   const banner = document.querySelector('[data-cookie-banner]');
+  // Key for storing consent choice.
   const storageKey = 'arcade_cookie_choice';
+  // Check if localStorage is available.
   const safeStorage = (() => {
     try {
       const testKey = '__arcade_test__';
@@ -197,6 +200,7 @@ button:focus-visible {
       return null;
     }
   })();
+  // Read stored consent choice.
   const getStoredChoice = () => {
     if (!safeStorage) {
       return null;
@@ -207,6 +211,7 @@ button:focus-visible {
       return null;
     }
   };
+  // Save consent choice.
   const setStoredChoice = (value) => {
     if (!safeStorage) {
       return;
@@ -217,6 +222,7 @@ button:focus-visible {
       return;
     }
   };
+  // Hide banner if a choice is stored and wire button handlers.
   if (banner) {
     const stored = getStoredChoice();
     if (stored) {
@@ -226,6 +232,7 @@ button:focus-visible {
       setStoredChoice(value);
       banner.hidden = true;
     };
+    // Buttons set the stored choice and hide the banner.
     const accept = banner.querySelector('[data-cookie-action="accept"]');
     const decline = banner.querySelector('[data-cookie-action="decline"]');
     if (accept) {
@@ -240,3 +247,18 @@ button:focus-visible {
 <!-- End JS -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

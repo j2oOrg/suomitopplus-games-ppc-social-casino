@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Privacy policy for sumomitopplus Social Casino. 18+ only. No real-money gambling, no prizes, and no cash value.">
+<meta name="description" content="Privacy policy for Suomitopplus. 21+ only, not for minors. Just for fun - no real-money gambling, no prizes of real-world value, no cash value, no in-app purchases.">
 <meta name="robots" content="index,follow">
-<title>sumomitopplus Privacy Policy</title>
+<title>Suomitopplus Privacy Policy</title>
 <style>
 :root {
   --ink: #1f1c18;
@@ -328,7 +328,7 @@ main section:nth-of-type(2) {
 <a class="pp-skip-6t1n4s" href="#main">Skip to content</a>
 <header>
   <div>
-    <a href="index.html">sumomitopplus</a>
+    <a href="index.html">Suomitopplus</a>
     <a href="play.html">Play now</a>
   </div>
   <nav aria-label="Primary">
@@ -343,27 +343,27 @@ main section:nth-of-type(2) {
 <main id="main">
   <section class="pp-hero-9g3k7x">
     <p>Privacy policy</p>
-    <h1>sumomitopplus Privacy Policy</h1>
-    <p>Effective date: 2026-01-01</p>
+    <h1>Suomitopplus Privacy Policy</h1>
+    <p>Effective date: January 18, 2026</p>
   </section>
   <section class="pp-policy-2m6c9v">
     <h2>Privacy Policy</h2>
     <ol>
       <li>
         <h3>Information we collect</h3>
-        <p>We collect the details you submit through the contact and newsletter forms, such as your name and email address.</p>
+        <p>Right now, the only information we receive is what you send by email (for example, your name, email address, and message). We do not have on-site forms or account registrations.</p>
       </li>
       <li>
         <h3>Cookies and local storage</h3>
-        <p>We store your cookie preference in local storage so you do not have to repeat the consent choice on every visit.</p>
+        <p>We only use local storage to remember your choice. We do not currently use analytics or ad cookies.</p>
       </li>
       <li>
         <h3>How we use data</h3>
-        <p>We use your information to respond to messages, send requested updates, and improve the site experience.</p>
+        <p>We use your information to reply to messages and handle update requests sent by email.</p>
       </li>
       <li>
         <h3>Sharing</h3>
-        <p>We do not sell personal information. We may share data with service providers that help us operate the site or when required by law.</p>
+        <p>We do not sell personal information for money. We may share data with service providers that help run the site or when required by law.</p>
       </li>
       <li>
         <h3>Retention</h3>
@@ -371,7 +371,7 @@ main section:nth-of-type(2) {
       </li>
       <li>
         <h3>Security</h3>
-        <p>We use reasonable measures to protect data. No online service can guarantee absolute security.</p>
+        <p>We use reasonable measures to protect data, but no online service can guarantee absolute security.</p>
       </li>
       <li>
         <h3>Your rights</h3>
@@ -379,11 +379,11 @@ main section:nth-of-type(2) {
       </li>
       <li>
         <h3>Changes to this policy</h3>
-        <p>We may update this policy from time to time. Continued use of the site constitutes acceptance of the updated policy.</p>
+        <p>We may update this policy. If we do, we will post the new version here with an updated effective date. Continued use of the site means you accept the updated policy.</p>
       </li>
       <li>
         <h3>Contact</h3>
-        <p>For privacy questions, email privacy@sumomitopplus.com or use the contact page.</p>
+        <p>For privacy questions, email <a href="mailto:privacy@suomitopplus.com">privacy@suomitopplus.com</a>.</p>
       </li>
     </ol>
   </section>
@@ -391,20 +391,13 @@ main section:nth-of-type(2) {
 <footer>
   <div>
     <section>
-      <h2>sumomitopplus Social Casino</h2>
-      <p>A social casino lounge with bright themes, social play, and no real-money play.</p>
-      <p>18+ only. For entertainment only. No real-money gambling, no prizes, and no cash value.</p>
+      <h2>Suomitopplus Social Casino</h2>
+      <p>A low-key social casino vibe with three small games and no real-money play.</p>
+      <p>21+ only. Just for fun - no real-money gambling, no prizes, no cash value.</p>
     </section>
     <section>
-      <h3>Newsletter</h3>
-      <form data-newsletter-form>
-        <label for="news-name-pp">Name</label>
-        <input id="news-name-pp" name="name" type="text" autocomplete="name" required>
-        <label for="news-email-pp">Email</label>
-        <input id="news-email-pp" name="email" type="email" autocomplete="email" required>
-        <button type="submit">Join the lounge</button>
-      </form>
-      <p data-newsletter-success role="status" aria-live="polite" hidden>Thanks for joining. Your first update will arrive soon.</p>
+      <h3>Email updates</h3>
+      <p>Want updates? Email <a href="mailto:support@suomitopplus.com">support@suomitopplus.com</a>.</p>
     </section>
     <section>
       <h3>Explore</h3>
@@ -416,20 +409,23 @@ main section:nth-of-type(2) {
       </ul>
     </section>
   </div>
-  <p>Copyright 2026 sumomitopplus. Entertainment only.</p>
+  <p>Copyright 2026 Suomitopplus. For fun only.</p>
 </footer>
 <div class="pp-cookie-4r8p1w" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent">
-  <p>Cookies help us improve your experience. By continuing to browse this site, you agree to our use of cookies.</p>
+  <p>We only use local storage to remember your choice. We do not currently use analytics or ad cookies.</p>
   <div>
     <button type="button" data-cookie-action="accept">Accept</button>
     <button type="button" data-cookie-action="decline">Decline</button>
   </div>
 </div>
-<!-- JS: handles cookie consent banner and newsletter signup success message. -->
+<!-- JS: handles cookie consent banner. -->
 <script>
 (() => {
+  // Cookie consent banner wiring (localStorage only; no analytics/ads).
   const banner = document.querySelector('[data-cookie-banner]');
+  // Key for storing consent choice.
   const storageKey = 'arcade_cookie_choice';
+  // Check if localStorage is available.
   const safeStorage = (() => {
     try {
       const testKey = '__arcade_test__';
@@ -440,6 +436,7 @@ main section:nth-of-type(2) {
       return null;
     }
   })();
+  // Read stored consent choice.
   const getStoredChoice = () => {
     if (!safeStorage) {
       return null;
@@ -450,6 +447,7 @@ main section:nth-of-type(2) {
       return null;
     }
   };
+  // Save consent choice.
   const setStoredChoice = (value) => {
     if (!safeStorage) {
       return;
@@ -460,6 +458,7 @@ main section:nth-of-type(2) {
       return;
     }
   };
+  // Hide banner if a choice is stored and wire button handlers.
   if (banner) {
     const stored = getStoredChoice();
     if (stored) {
@@ -469,6 +468,7 @@ main section:nth-of-type(2) {
       setStoredChoice(value);
       banner.hidden = true;
     };
+    // Buttons set the stored choice and hide the banner.
     const accept = banner.querySelector('[data-cookie-action="accept"]');
     const decline = banner.querySelector('[data-cookie-action="decline"]');
     if (accept) {
@@ -478,19 +478,24 @@ main section:nth-of-type(2) {
       decline.addEventListener('click', () => setChoice('declined'));
     }
   }
-
-  const newsForm = document.querySelector('[data-newsletter-form]');
-  const newsSuccess = document.querySelector('[data-newsletter-success]');
-  if (newsForm && newsSuccess) {
-    newsForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      newsForm.reset();
-      newsForm.hidden = true;
-      newsSuccess.hidden = false;
-    });
-  }
 })();
 </script>
 <!-- End JS -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
